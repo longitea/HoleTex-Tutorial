@@ -59,8 +59,7 @@ Cơ bản nó là 1 funtion dùng để gửi (Mô tả action) lên cho reducer
 
 ```
 # 2. Build TodoList App by Redux Core
-Xây dựng 1 ứng dụng todolist sử dụng redux
-
+Xây dựng 1 ứng dụng todolist bằng Redux Core
 
 ## Screenshots
 ![App Screenshot](./public/todo_image.png)
@@ -91,3 +90,8 @@ khi mà user input công việc lưu vào trong store và hiển thị trên gia
 1. khi bấm add -> lấy được giá trị userinput -> setState
 2. state.map-> render danh sách ra giao diện
 3. sử dụng redux
+
+
+
+#### split Reducer
+chia reducer theo chức năng, mỗi reducer thực hiện 1 chức năng riêng biệt.

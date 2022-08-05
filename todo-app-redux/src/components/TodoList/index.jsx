@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import {Button, Col, Input, Row, Select, Tag} from 'antd'
+import { Button, Col, Input, Row, Select, Tag } from 'antd'
 import Todo from '../Todo'
 import { useDispatch, useSelector } from 'react-redux'
 import { addTodo } from '../Redux/action'
 import { v4 as uuidv4 } from 'uuid'
+import { todosRemaining } from '../Redux/selectors'
 
 export default function index() {
 
@@ -11,8 +12,8 @@ export default function index() {
     const [priority, setPriority] = useState('Medium')
 
     const dispath = useDispatch()
-    const todoList = useSelector(state => state.todoList)
-    
+    const todoList = useSelector(todosRemaining)
+
     const handleSumbit = () => {
         dispath(addTodo(
             {
@@ -21,6 +22,10 @@ export default function index() {
                 priority: priority,
                 completed: false,
             }))
+
+        setTodoName('')
+        setPriority('Medium')
+
     }
 
     return (
@@ -28,12 +33,12 @@ export default function index() {
             <Col span={24} style={{ height: 'calc(100% - 40px)', overflowY: 'auto' }}>
                 {/* render danh sách todolist bên trong store */}
                 {
-                   todoList.map(task => <Todo key={task.id} name={task.name} priority={task.priority} />)
+                    todoList?.map(task => <Todo key={task.id} name={task.name} priority={task.priority} completed={task.completed}/>)
                 }
             </Col>
             <Col span={24}>
                 <Input.Group style={{ display: 'flex' }} compact>
-                    <Input onChange={ev => setTodoName(ev.target.value)}/>
+                    <Input value={todoName} onChange={ev => setTodoName(ev.target.value)} />
                     <Select defaultValue="Medium" value={priority} onChange={ev => setPriority(ev)}>
                         <Select.Option value='High' label='High'>
                             <Tag color='red'>High</Tag>

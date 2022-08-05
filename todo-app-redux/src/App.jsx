@@ -1,9 +1,9 @@
-import { Divider } from 'antd'
-import Title from 'antd/lib/skeleton/Title'
+import { Typography, Divider } from 'antd'
 import './App.css'
 import Filters from '../src/components/Filters'
 import TodoList from '../src/components/TodoList'
 
+const { Title } = Typography;
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         height: '90vh',
       }}
     >
-      <Title style={{ textAlign: 'center' }}>TODO APP with REDUX</Title>
+      <Title style={{ textAlign: 'center' }}> REDUX TODO </Title>
       <Filters />
       <Divider />
       <TodoList />

@@ -7,9 +7,9 @@ const priorityColorMapping = {
     Low: 'gray',
 };
 
-export default function index({ name, priority }) {
+export default function index({ name, priority, completed }) {
 
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(completed);
 
     const toggleCheckbox = () => {
         setChecked(!checked);
