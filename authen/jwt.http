@@ -1,0 +1,27 @@
+# lấy dữ liệu từ api
+GET http://localhost:5000/animes
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoYW5obG9uZyIsImlhdCI6MTY1ODg5MzUxOCwiZXhwIjoxNjU4ODkzNTc4fQ.FuynUmCxehXC28pVcD4vY8IP0LodAMEU5Nx95Ql4xKE
+
+### gửi dữ liệu lên api
+POST http://localhost:5500/login
+Content-Type: application/json
+
+{
+    "username": "thanhlong"
+}
+
+### refreshToken
+POST http://localhost:5500/refreshToken
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoYW5obG9uZyIsImlhdCI6MTY1ODg5MzQwOX0.UEc1KDG9iClMlj0N2VPfSQBQb_4B8YGWja2wE_1TYIc"
+}
+
+### Logout
+POST http://localhost:5500/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoYW5obG9uZyIsImlhdCI6MTY1ODg5MzU1Nn0.VFQLxBH4FN1YrgCnC5xVusZkrvP7sf8HiIUJHUlI5FE"
+}
